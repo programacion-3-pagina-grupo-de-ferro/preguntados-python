@@ -138,24 +138,31 @@ class App(tk.Tk):
             messagebox.showinfo("Ronda finalizada", "Ya respondiste las 10 preguntas.")
             return
 
+        # 🔒 Bloquear el botón de girar hasta que se responda
+        self.btn_spin.config(state="disabled")
+
         category = random.choice(CATEGORIES)
         self.lbl_category.config(text=f"Categoría: {category}")
-        # draw a question
         q = self.engine._draw_question(category)
         self.current_question = q
         self.lbl_prompt.config(text=q.prompt)
+
         for i, opt in enumerate(q.options):
             self.answer_vars[i].config(text=opt)
+
         self.radio_var.set(-1)
         self.btn_submit.config(state="normal")
+
 
     def _on_submit(self):
         if self.current_question is None or self.player is None:
             return
+
         choice = self.radio_var.get()
         if choice == -1:
             messagebox.showwarning("Atención", "Elegí una opción.")
             return
+
         correct = self.engine.record_answer(self.player, self.current_question, choice)
         if correct:
             messagebox.showinfo("Resultado", "¡Correcto!")
@@ -165,12 +172,17 @@ class App(tk.Tk):
 
         self.questions_remaining -= 1
         self.lbl_remaining.config(text=f"Preguntas restantes: {self.questions_remaining}")
-        self.current_question = None
+
+        # ✅ Volver a habilitar la ruleta
+        self.btn_spin.config(state="normal")
         self.btn_submit.config(state="disabled")
+        self.current_question = None
 
         if self.questions_remaining == 0:
             messagebox.showinfo("Fin", f"Ronda finalizada. Aciertos: {self.player.score}/10")
+            self.btn_spin.config(state="disabled")
             self._refresh_ranking()
+
 
     # ----------------- Ranking -----------------
     def _refresh_ranking(self):

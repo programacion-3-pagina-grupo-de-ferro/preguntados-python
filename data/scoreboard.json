@@ -1,5 +1,29 @@
 [
   {
+    "id": "8a3fd9bd-8670-4856-9402-82d8cbecc1f9",
+    "name": "juan cruz ferro v2",
+    "score": 10,
+    "total_answered": 10,
+    "category_stats": {
+      "Historia": 3,
+      "Ciencia": 1,
+      "Geografía": 3,
+      "Deporte": 3
+    },
+    "history": [
+      "Historia",
+      "Deporte",
+      "Geografía",
+      "Ciencia",
+      "Geografía",
+      "Historia",
+      "Historia",
+      "Deporte",
+      "Deporte",
+      "Geografía"
+    ]
+  },
+  {
     "id": "4a81214f-d3f1-4516-991b-2a8da8ec8200",
     "name": "juan ferro",
     "score": 1,
