@@ -1,0 +1,18 @@
+[
+  {
+    "id": "4a81214f-d3f1-4516-991b-2a8da8ec8200",
+    "name": "juan ferro",
+    "score": 1,
+    "total_answered": 2,
+    "category_stats": {
+      "Historia": 0,
+      "Ciencia": 0,
+      "Geografía": 1,
+      "Deporte": 0
+    },
+    "history": [
+      "Geografía",
+      "Deporte"
+    ]
+  }
+]
