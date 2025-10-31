@@ -5,6 +5,16 @@
     "answered": 0
   },
   {
+    "name": "tester",
+    "score": 10,
+    "answered": 10
+  },
+  {
+    "name": "julian",
+    "score": 9,
+    "answered": 10
+  },
+  {
     "name": "ferritooooo",
     "score": 8,
     "answered": 0
@@ -18,6 +28,11 @@
     "name": "vanina",
     "score": 6,
     "answered": 0
+  },
+  {
+    "name": "asdasdsda",
+    "score": 4,
+    "answered": 10
   },
   {
     "name": "juan ferro",
