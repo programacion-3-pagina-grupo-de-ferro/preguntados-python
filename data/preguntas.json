@@ -1,0 +1,365 @@
+{
+  "Historia": [
+    {
+      "tipo": "mc",
+      "texto": "¿En qué año comenzó la Primera Guerra Mundial?",
+      "opciones": ["1912", "1914", "1916", "1918"],
+      "respuesta": 1,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/10/WWI_mobilization.png"
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Quién fue el primer emperador romano?",
+      "opciones": ["Julio César", "Augusto", "Nerón", "Trajano"],
+      "respuesta": 1
+    },
+    {
+      "tipo": "vf",
+      "texto": "La Revolución Francesa empezó en 1789.",
+      "respuesta": true,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Prise_de_la_Bastille.jpg"
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Qué civilización construyó Machu Picchu?",
+      "opciones": ["Maya", "Azteca", "Inca", "Olmeca"],
+      "respuesta": 2,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Machu_Picchu%2C_Peru.jpg"
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿En qué año cayó el Imperio Romano de Occidente?",
+      "opciones": ["410", "476", "509", "540"],
+      "respuesta": 1
+    },
+    {
+      "tipo": "vf",
+      "texto": "La Guerra Fría fue un conflicto directo y armado entre EE. UU. y la URSS.",
+      "respuesta": false
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Quién lideró la independencia de Argentina?",
+      "opciones": ["Manuel Belgrano", "José de San Martín", "Juan Manuel de Rosas", "Bernardino Rivadavia"],
+      "respuesta": 1,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/3/3b/San_Martin_por_Goyeneche.jpg"
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Qué tratado puso fin a la Primera Guerra Mundial?",
+      "opciones": ["Versalles", "Tordesillas", "Utrecht", "París (1783)"],
+      "respuesta": 0
+    },
+    {
+      "tipo": "vf",
+      "texto": "La imprenta de Gutenberg aparece en el siglo XV.",
+      "respuesta": true
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Qué imperio construyó la Gran Muralla en su forma más conocida?",
+      "opciones": ["Han", "Qin", "Tang", "Ming"],
+      "respuesta": 3,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Great_Wall_of_China_July_2006.JPG"
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Quién fue Cleopatra?",
+      "opciones": ["Reina de Egipto", "Emperatriz China", "Reina de Cartago", "Sacerdotisa Sumeria"],
+      "respuesta": 0
+    },
+    {
+      "tipo": "vf",
+      "texto": "El Muro de Berlín cayó en 1989.",
+      "respuesta": true
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿En qué continente comenzó la Revolución Industrial?",
+      "opciones": ["Asia", "Europa", "América", "Oceanía"],
+      "respuesta": 1
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Qué cultura antigua es famosa por las pirámides de Giza?",
+      "opciones": ["Mesopotámica", "Egipcia", "Hitita", "Persa"],
+      "respuesta": 1,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Kheops-Pyramid.jpg"
+    },
+    {
+      "tipo": "vf",
+      "texto": "Napoleón Bonaparte fue derrotado definitivamente en Waterloo (1815).",
+      "respuesta": true
+    }
+  ],
+  "Ciencia": [
+    {
+      "tipo": "mc",
+      "texto": "¿Cuál es la partícula con carga negativa?",
+      "opciones": ["Protón", "Electrón", "Neutrón", "Positrón"],
+      "respuesta": 1
+    },
+    {
+      "tipo": "vf",
+      "texto": "La velocidad de la luz en el vacío es de aproximadamente 3×10^8 m/s.",
+      "respuesta": true
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Quién propuso la teoría de la relatividad general?",
+      "opciones": ["Isaac Newton", "Albert Einstein", "Niels Bohr", "Max Planck"],
+      "respuesta": 1,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg"
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Cuál es la fórmula química del agua?",
+      "opciones": ["H2O", "CO2", "O2", "NaCl"],
+      "respuesta": 0
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Qué órgano produce la insulina?",
+      "opciones": ["Hígado", "Páncreas", "Riñón", "Bazo"],
+      "respuesta": 1
+    },
+    {
+      "tipo": "vf",
+      "texto": "Los virus son considerados seres vivos por todos los científicos.",
+      "respuesta": false
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Cuál es la unidad básica de la vida?",
+      "opciones": ["Gen", "Célula", "Tejido", "Órgano"],
+      "respuesta": 1
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Qué gas es más abundante en la atmósfera terrestre?",
+      "opciones": ["Oxígeno", "Nitrógeno", "Argón", "Dióxido de carbono"],
+      "respuesta": 1
+    },
+    {
+      "tipo": "vf",
+      "texto": "El ADN tiene forma de doble hélice.",
+      "respuesta": true
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Cuál es el planeta más grande del sistema solar?",
+      "opciones": ["Saturno", "Júpiter", "Urano", "Neptuno"],
+      "respuesta": 1,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg"
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Qué escala mide la acidez de una disolución?",
+      "opciones": ["Celsius", "Richter", "pH", "Decibelios"],
+      "respuesta": 2
+    },
+    {
+      "tipo": "vf",
+      "texto": "La tabla periódica actual está ordenada por número atómico.",
+      "respuesta": true
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Cuál es el metal líquido a temperatura ambiente?",
+      "opciones": ["Mercurio", "Plomo", "Sodio", "Zinc"],
+      "respuesta": 0
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Qué fenómeno explica el arcoíris?",
+      "opciones": ["Reflexión y refracción", "Difracción", "Interferencia", "Fotoelectricidad"],
+      "respuesta": 0,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/0/00/Double-alaskan-rainbow.jpg"
+    },
+    {
+      "tipo": "vf",
+      "texto": "Los mamíferos ponen huevos.",
+      "respuesta": false
+    }
+  ],
+  "Geografía": [
+    {
+      "tipo": "mc",
+      "texto": "¿Cuál es el río más largo del mundo (discutido con el Nilo)?",
+      "opciones": ["Yangtsé", "Misisipi", "Amazonas", "Danubio"],
+      "respuesta": 2,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Amazon_CIAT.jpg"
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Capital de Canadá?",
+      "opciones": ["Toronto", "Vancouver", "Ottawa", "Montreal"],
+      "respuesta": 2
+    },
+    {
+      "tipo": "vf",
+      "texto": "El Everest está en la cordillera del Himalaya.",
+      "respuesta": true,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/12/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg"
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Qué país tiene más habitantes?",
+      "opciones": ["India", "China", "Estados Unidos", "Indonesia"],
+      "respuesta": 0
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Cuál es el desierto más grande del mundo (no polar)?",
+      "opciones": ["Sahara", "Gobi", "Kalahari", "Atacama"],
+      "respuesta": 0
+    },
+    {
+      "tipo": "vf",
+      "texto": "Australia es a la vez país y continente.",
+      "respuesta": true
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿En qué océano está Madagascar?",
+      "opciones": ["Atlántico", "Pacífico", "Índico", "Ártico"],
+      "respuesta": 2
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Cuál es la capital de Japón?",
+      "opciones": ["Kioto", "Osaka", "Tokio", "Yokohama"],
+      "respuesta": 2,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/18/Tokyo_Skyline.jpg"
+    },
+    {
+      "tipo": "vf",
+      "texto": "La península ibérica incluye a España y Portugal.",
+      "respuesta": true
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Cuál es el lago más profundo del mundo?",
+      "opciones": ["Tanganica", "Baikal", "Vostok", "Superior"],
+      "respuesta": 1
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Qué país tiene forma de bota?",
+      "opciones": ["Grecia", "Chile", "Italia", "Vietnam"],
+      "respuesta": 2
+    },
+    {
+      "tipo": "vf",
+      "texto": "El río Danubio pasa por más de 5 países europeos.",
+      "respuesta": true
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Capital de Nueva Zelanda?",
+      "opciones": ["Auckland", "Wellington", "Christchurch", "Hamilton"],
+      "respuesta": 1
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿En qué continente está Marruecos?",
+      "opciones": ["Europa", "África", "Asia", "Oceanía"],
+      "respuesta": 1
+    },
+    {
+      "tipo": "vf",
+      "texto": "Groenlandia pertenece al Reino de Dinamarca.",
+      "respuesta": true
+    }
+  ],
+  "Deporte": [
+    {
+      "tipo": "mc",
+      "texto": "¿Cuántos jugadores por equipo en cancha tiene el fútbol?",
+      "opciones": ["9", "10", "11", "12"],
+      "respuesta": 2
+    },
+    {
+      "tipo": "vf",
+      "texto": "Usain Bolt tiene el récord mundial de 100 metros.",
+      "respuesta": true,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Usain_Bolt_2012_Olympics_1.jpg"
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿En qué deporte destacó Michael Jordan?",
+      "opciones": ["Béisbol", "Tenis", "Fútbol", "Básquetbol"],
+      "respuesta": 3
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Qué país ganó el Mundial de Fútbol 2022?",
+      "opciones": ["Francia", "Argentina", "Brasil", "Croacia"],
+      "respuesta": 1
+    },
+    {
+      "tipo": "vf",
+      "texto": "El tenis se juega siempre al mejor de 5 sets.",
+      "respuesta": false
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Cuántos Grand Slams hay en tenis?",
+      "opciones": ["2", "3", "4", "5"],
+      "respuesta": 2
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Qué selección ganó más Copas del Mundo?",
+      "opciones": ["Alemania", "Argentina", "Brasil", "Italia"],
+      "respuesta": 2
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿En qué ciudad se celebraron los JJ. OO. 2008?",
+      "opciones": ["Atenas", "Pekín", "Londres", "Sídney"],
+      "respuesta": 1,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Beijing_National_Stadium_in_2008.jpg"
+    },
+    {
+      "tipo": "vf",
+      "texto": "En rugby, un try vale 5 puntos.",
+      "respuesta": true
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Quién es conocido como 'La Mano de Dios'?",
+      "opciones": ["Pelé", "Cruyff", "Maradona", "Ronaldo"],
+      "respuesta": 2,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Diego_Maradona_1995.jpg"
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Qué superficie es típica del Roland Garros?",
+      "opciones": ["Césped", "Dura", "Arcilla", "Madera"],
+      "respuesta": 2
+    },
+    {
+      "tipo": "vf",
+      "texto": "El básquetbol se juega en 3 tiempos de 15 minutos.",
+      "respuesta": false
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Cuál es el país sede de la Fórmula 1 GP de Mónaco?",
+      "opciones": ["Francia", "España", "Italia", "Mónaco"],
+      "respuesta": 3
+    },
+    {
+      "tipo": "mc",
+      "texto": "¿Cuántos anillos tiene el logo olímpico?",
+      "opciones": ["4", "5", "6", "7"],
+      "respuesta": 1
+    },
+    {
+      "tipo": "vf",
+      "texto": "Lionel Messi ganó un Mundial Sub-20 con Argentina.",
+      "respuesta": true
+    }
+  ]
+}

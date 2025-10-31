@@ -1,42 +1,37 @@
 [
   {
-    "id": "8a3fd9bd-8670-4856-9402-82d8cbecc1f9",
     "name": "juan cruz ferro v2",
     "score": 10,
-    "total_answered": 10,
-    "category_stats": {
-      "Historia": 3,
-      "Ciencia": 1,
-      "Geografía": 3,
-      "Deporte": 3
-    },
-    "history": [
-      "Historia",
-      "Deporte",
-      "Geografía",
-      "Ciencia",
-      "Geografía",
-      "Historia",
-      "Historia",
-      "Deporte",
-      "Deporte",
-      "Geografía"
-    ]
+    "answered": 0
   },
   {
-    "id": "4a81214f-d3f1-4516-991b-2a8da8ec8200",
+    "name": "ferritooooo",
+    "score": 8,
+    "answered": 0
+  },
+  {
+    "name": "franco dalla",
+    "score": 6,
+    "answered": 10
+  },
+  {
+    "name": "vanina",
+    "score": 6,
+    "answered": 0
+  },
+  {
     "name": "juan ferro",
     "score": 1,
-    "total_answered": 2,
-    "category_stats": {
-      "Historia": 0,
-      "Ciencia": 0,
-      "Geografía": 1,
-      "Deporte": 0
-    },
-    "history": [
-      "Geografía",
-      "Deporte"
-    ]
+    "answered": 0
+  },
+  {
+    "name": "juan",
+    "score": 0,
+    "answered": 0
+  },
+  {
+    "name": "juancruzferro v3",
+    "score": 0,
+    "answered": 0
   }
 ]
