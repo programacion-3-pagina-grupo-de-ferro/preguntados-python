@@ -32,9 +32,9 @@ trivia_preguntados/
 ```
 
 ## Cómo ejecutar
-Desde la carpeta `trivia_preguntados`:
+Desde la carpeta `gui_moderno-v3.py`:
 ```bash
-python main.py --gui
+python gui_moderno_v3.py 
 ```
 
 ## Características destacadas (para el TP)
