@@ -48,9 +48,9 @@ python gui_moderno_v3.py
 ## Notas de uso
 - Cada partida consta de **10 preguntas** con categorías decididas al azar (ruleta).
 - El ranking se ordena por aciertos (desc) y nombre (asc).
-
+- 15 segundos por pregunta. En caso de quedarse sin tiempo sale un mensaje de respuesta incorrecta, diciendo a su vez la respuesta correcta. 
 ## Extensiones posibles
 - Agregar más preguntas a `data/questions.json`.
 - Exportar ranking a CSV (con `pandas` si querés sumar otro módulo).
-- Añadir temporizador por pregunta o sonidos.
+
 >>>>>>> 67882d6 (Primer commit - Juego Preguntados)
