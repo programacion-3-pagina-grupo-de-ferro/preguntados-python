@@ -4,6 +4,8 @@
 Juego estilo **Preguntados**, desarrollado en **Python** con una interfaz moderna basada en **CustomTkinter**.
 
 ---
+## 📂 Estructura del proyecto
+
 preguntados-python/
 ├─ gui_moderno_v3.py          # Interfaz moderna (CustomTkinter)
 ├─ game_trivia.py             # Motor lógico del juego
