@@ -58,6 +58,80 @@ class TriviaGUI(ctk.CTk):
         self._build_ui()
         self._refresh_ranking()
 
+        # ----- Frame principal (donde se dibujan las pantallas) -----
+        self.content_frame = ctk.CTkFrame(self, fg_color="transparent")
+        self.content_frame.pack(expand=True, fill="both")
+
+        # Mostrar pantalla de registro al iniciar
+        self._show_registration()
+
+
+        # ----- Pantalla completa (ajustada) -----
+        # Inicia maximizada, pero se puede restaurar con F11 o ESC
+        self.state('zoomed')  # Maximiza la ventana en Windows
+
+        self.bind("<F11>", self.toggle_fullscreen)
+        self.bind("<Escape>", self.exit_fullscreen)
+
+    def toggle_fullscreen(self, event=None):
+        """Activa o desactiva el modo pantalla completa"""
+        current_state = self.attributes("-fullscreen")
+        self.attributes("-fullscreen", not current_state)
+
+    def exit_fullscreen(self, event=None):
+        """Sale del modo pantalla completa"""
+        self.attributes("-fullscreen", False)
+        self.state('zoomed')
+
+
+    
+    def _show_registration(self):
+        """Pantalla de registro dentro de la app"""
+        # Limpiamos cualquier contenido anterior
+        for widget in self.content_frame.winfo_children():
+            widget.destroy()
+
+        lbl_title = ctk.CTkLabel(self.content_frame, text="🎮 Bienvenido a Preguntados", font=("Arial Rounded MT Bold", 36))
+        lbl_title.pack(pady=60)
+
+        lbl_name = ctk.CTkLabel(self.content_frame, text="Ingresá tu nombre:", font=("Arial", 22))
+        lbl_name.pack(pady=10)
+
+        self.entry_name = ctk.CTkEntry(self.content_frame, placeholder_text="Tu nombre", width=300, height=40)
+        self.entry_name.pack(pady=10)
+
+        btn_start = ctk.CTkButton(
+            self.content_frame,
+            text="🚀 Comenzar",
+            font=("Arial Rounded MT Bold", 20),
+            fg_color="#0077b6",
+            hover_color="#0096c7",
+            height=45,
+            width=200,
+            command=self._register_player
+        )
+        btn_start.pack(pady=30)
+        
+    def _register_player(self):
+            """Registra al jugador y pasa al juego"""
+            name = self.entry_name.get().strip()
+            if not name:
+                self.entry_name.configure(placeholder_text="⚠️ Ingresá un nombre")
+                return
+    
+            try:
+                self.player = self.engine.create_player(name)
+            except ValueError as e:
+                self.entry_name.delete(0, "end")
+                self.entry_name.configure(placeholder_text=str(e))
+                return
+    
+            # Una vez registrado, mostramos la pantalla de la ruleta o primera pregunta
+            self._show_wheel_screen()
+
+
+
+
     # ---------------- UI ----------------
     def _build_ui(self):
         title = ctk.CTkLabel(self, text="🎯 TRIVIA PREGUNTADOS — V3",
@@ -294,30 +368,41 @@ class TriviaGUI(ctk.CTk):
         self._after_answer(correct)
 
     def _after_answer(self, correct: bool):
-        if correct:
-            messagebox.showinfo("Correcto", "✅ ¡Respuesta correcta!")
-        else:
-            if self.current_question.tipo == "vf":
-                corr = "Verdadero" if bool(self.current_question.answer_index) else "Falso"
-            else:
-                corr = self.current_question.options[self.current_question.answer_index]
-            messagebox.showinfo("Incorrecto", f"❌ La respuesta correcta era: {corr}")
+        """Muestra el resultado usando los widgets ya creados (sin usar content_frame)."""
+        # Deshabilitamos opciones y el botón de enviar
+        for btn in self.option_buttons:
+            btn.configure(state="disabled")
+        self.btn_submit.configure(state="disabled")
 
-        self.questions_remaining -= 1
+        # Mensajes y feedback visual
+        emoji = "✅" if correct else "❌"
+        msg = "¡Respuesta correcta!" if correct else "Respuesta incorrecta"
+        sub = "Sumás un punto 😎" if correct else "La próxima te sale 😉"
+
+        # Mostramos feedback en la imagen y el enunciado
+        self.img_label.configure(image=None, text=emoji)
+        self.lbl_prompt.configure(text=f"{msg}\n\n{sub}")
+
+        # Actualizamos contadores y estado de botones
+        self.questions_remaining = max(0, self.questions_remaining - 1)
         self.lbl_remaining.configure(text=f"Preguntas restantes: {self.questions_remaining}")
-        self.current_question = None
-        self.img_label.configure(image=None, text="")
-        if self.questions_remaining > 0:
-            self.btn_spin.configure(state="normal")
-            self.btn_submit.configure(state="disabled")
-            self.lbl_prompt.configure(text="Girá la ruleta para obtener una nueva categoría.")
-            self.lbl_timer.configure(text="⏳ Tiempo: —")
-        else:
-            messagebox.showinfo("Fin", f"Ronda finalizada. Aciertos: {self.player.score}/10")
+
+        # Si ya no quedan preguntas, activamos botón de reinicio
+        if self.questions_remaining <= 0:
             self.btn_spin.configure(state="disabled")
-            self.btn_submit.configure(state="disabled")
             self.btn_restart.configure(state="normal")
+        else:
+            # permitir girar para la siguiente pregunta
+            self.btn_spin.configure(state="normal")
+
+        # Reseteamos la pregunta actual y actualizamos ranking por si cambió el puntaje
+        self.current_question = None
+        try:
             self._refresh_ranking()
+        except Exception:
+            pass
+
+
 
     def _on_restart(self):
         self._stop_timer()
