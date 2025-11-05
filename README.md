@@ -7,19 +7,18 @@ Juego estilo **Preguntados**, desarrollado en **Python** con una interfaz modern
 ## 📂 Estructura del proyecto
 
 preguntados-python/
-├─ gui_moderno_v3.py          # Interfaz moderna (CustomTkinter)
-├─ game_trivia.py             # Motor lógico del juego
-├─ main.py                    # Punto de entrada opcional
+├─ gui_moderno_v3.py # Interfaz moderna (CustomTkinter)
+├─ game_trivia.py # Motor lógico del juego
+├─ main.py # Punto de entrada opcional
 ├─ models/
-│  ├─ base.py                 # Clase abstracta AbstractPlayer
-│  ├─ player.py               # Clase Player (hereda de AbstractPlayer)
-│  └─ player_tree.py          # Árbol binario (BST) con CRUD de jugadores
+│ ├─ base.py # Clase abstracta AbstractPlayer
+│ ├─ player.py # Clase Player (hereda de AbstractPlayer)
+│ └─ player_tree.py # Árbol binario (BST) con CRUD de jugadores
 ├─ data/
-│  ├─ questions.json          # Banco de preguntas
-│  ├─ jugadores.json          # Jugadores registrados
-│  └─ scoreboard.json         # Ranking persistente
+│ ├─ questions.json # Banco de preguntas
+│ ├─ jugadores.json # Jugadores registrados
+│ └─ scoreboard.json # Ranking persistente
 └─ README.md
-
 
 ## 🚀 Características principales
 
