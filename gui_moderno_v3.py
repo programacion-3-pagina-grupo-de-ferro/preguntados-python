@@ -63,7 +63,7 @@ class TriviaGUI(ctk.CTk):
         self.content_frame.pack(expand=True, fill="both")
 
         # Mostrar pantalla de registro al iniciar
-        self._show_registration()
+        #self._show_registration()
 
 
         # ----- Pantalla completa (ajustada) -----
@@ -85,32 +85,32 @@ class TriviaGUI(ctk.CTk):
 
 
     
-    def _show_registration(self):
-        """Pantalla de registro dentro de la app"""
+    #def _show_registration(self):
+        #"""Pantalla de registro dentro de la app"""
         # Limpiamos cualquier contenido anterior
-        for widget in self.content_frame.winfo_children():
-            widget.destroy()
+        #for widget in self.content_frame.winfo_children():
+        #    widget.destroy()
 
-        lbl_title = ctk.CTkLabel(self.content_frame, text="🎮 Bienvenido a Preguntados", font=("Arial Rounded MT Bold", 36))
-        lbl_title.pack(pady=60)
+        #lbl_title = ctk.CTkLabel(self.content_frame, text="🎮 Bienvenido a Preguntados", font=("Arial Rounded MT Bold", 36))
+        #lbl_title.pack(pady=60)
 
-        lbl_name = ctk.CTkLabel(self.content_frame, text="Ingresá tu nombre:", font=("Arial", 22))
-        lbl_name.pack(pady=10)
+        #lbl_name = ctk.CTkLabel(self.content_frame, text="Ingresá tu nombre:", font=("Arial", 22))
+        #lbl_name.pack(pady=10)
 
-        self.entry_name = ctk.CTkEntry(self.content_frame, placeholder_text="Tu nombre", width=300, height=40)
-        self.entry_name.pack(pady=10)
+        #self.entry_name = ctk.CTkEntry(self.content_frame, placeholder_text="Tu nombre", width=300, height=40)
+        #self.entry_name.pack(pady=10)
 
-        btn_start = ctk.CTkButton(
-            self.content_frame,
-            text="🚀 Comenzar",
-            font=("Arial Rounded MT Bold", 20),
-            fg_color="#0077b6",
-            hover_color="#0096c7",
-            height=45,
-            width=200,
-            command=self._register_player
-        )
-        btn_start.pack(pady=30)
+        #btn_start = ctk.CTkButton(
+        #    self.content_frame,
+        #    text="🚀 Comenzar",
+        #    font=("Arial Rounded MT Bold", 20),
+        #    fg_color="#0077b6",
+        #    hover_color="#0096c7",
+        #    height=45,
+        #    width=200,
+        #    command=self._register_player
+        #)
+        #btn_start.pack(pady=30)
         
     def _register_player(self):
             """Registra al jugador y pasa al juego"""
