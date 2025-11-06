@@ -1,10 +1,5 @@
 [
   {
-    "name": "holamundo1234",
-    "score": 10,
-    "answered": 10
-  },
-  {
     "name": "asdasdsda",
     "score": 0,
     "answered": 0
@@ -26,6 +21,11 @@
   },
   {
     "name": "holamundo123",
+    "score": 0,
+    "answered": 0
+  },
+  {
+    "name": "holamundo1234",
     "score": 0,
     "answered": 0
   },
@@ -63,6 +63,16 @@
     "name": "maletti",
     "score": 0,
     "answered": 0
+  },
+  {
+    "name": "mision 1",
+    "score": 0,
+    "answered": 0
+  },
+  {
+    "name": "sadsadas",
+    "score": 0,
+    "answered": 5
   },
   {
     "name": "tester",

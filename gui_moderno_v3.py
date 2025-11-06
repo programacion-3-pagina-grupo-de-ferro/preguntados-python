@@ -368,39 +368,70 @@ class TriviaGUI(ctk.CTk):
         self._after_answer(correct)
 
     def _after_answer(self, correct: bool):
-        """Muestra el resultado usando los widgets ya creados (sin usar content_frame)."""
-        # Deshabilitamos opciones y el botón de enviar
-        for btn in self.option_buttons:
-            btn.configure(state="disabled")
-        self.btn_submit.configure(state="disabled")
+     """Muestra el resultado dentro de la misma pantalla y permite avanzar."""
+     # Deshabilitamos opciones y el botón de enviar
+     for btn in self.option_buttons:
+        btn.configure(state="disabled")
+     self.btn_submit.configure(state="disabled")
 
-        # Mensajes y feedback visual
-        emoji = "✅" if correct else "❌"
-        msg = "¡Respuesta correcta!" if correct else "Respuesta incorrecta"
-        sub = "Sumás un punto 😎" if correct else "La próxima te sale 😉"
+    # Preparamos mensajes y feedback
+     if correct:
+        emoji = "✅"
+        msg = "¡Respuesta correcta!"
+        sub = "Sumás un punto 😎"
+        color = "green"
+     else:
+        emoji = "❌"
+        correcta = self.current_question.options[self.current_question.answer_index]
+        msg = "Respuesta incorrecta"
+        sub = f"La correcta era: {correcta}"
+        color = "red"
 
-        # Mostramos feedback en la imagen y el enunciado
-        self.img_label.configure(image=None, text=emoji)
-        self.lbl_prompt.configure(text=f"{msg}\n\n{sub}")
+     # Mostramos feedback visual en el área de pregunta
+     self.img_label.configure(image=None, text=emoji)
+     self.lbl_prompt.configure(text=f"{msg}\n{sub}", text_color=color)
 
-        # Actualizamos contadores y estado de botones
-        self.questions_remaining = max(0, self.questions_remaining - 1)
-        self.lbl_remaining.configure(text=f"Preguntas restantes: {self.questions_remaining}")
+     # Actualizamos el contador
+     self.questions_remaining = max(0, self.questions_remaining - 1)
+     self.lbl_remaining.configure(text=f"Preguntas restantes: {self.questions_remaining}")
 
-        # Si ya no quedan preguntas, activamos botón de reinicio
-        if self.questions_remaining <= 0:
-            self.btn_spin.configure(state="disabled")
-            self.btn_restart.configure(state="normal")
-        else:
-            # permitir girar para la siguiente pregunta
-            self.btn_spin.configure(state="normal")
+     # Ocultamos botón de girar temporalmente
+     self.btn_spin.configure(state="disabled")
 
-        # Reseteamos la pregunta actual y actualizamos ranking por si cambió el puntaje
-        self.current_question = None
-        try:
-            self._refresh_ranking()
-        except Exception:
-            pass
+     # Eliminamos botón "Siguiente" previo si ya existía
+     if hasattr(self, "btn_next"):
+        self.btn_next.destroy()
+
+     # Mostramos botón "Siguiente pregunta"
+     self.btn_next = ctk.CTkButton(
+        self.content_frame,
+        text="➡️ Siguiente pregunta",
+        font=("Arial Rounded MT Bold", 20),
+        fg_color="#0077b6",
+        hover_color="#0096c7",
+        command=self._on_next_question
+     )
+     self.btn_next.pack(pady=20)
+
+     # Si ya no quedan preguntas, cambiamos el botón por "Reiniciar"
+     if self.questions_remaining <= 0:
+        self.btn_next.configure(text="🏁 Terminar", command=self._restart_game)
+
+     # Actualizamos ranking
+     self.current_question = None
+     try:
+        self._refresh_ranking()
+     except Exception:
+        pass
+
+
+    def _on_next_question(self):
+     """Limpia feedback y pasa a la siguiente pregunta."""
+     self.btn_next.destroy()
+     self.lbl_prompt.configure(text="")
+     self.img_label.configure(text="")
+     self.btn_spin.configure(state="normal")
+
 
 
 
