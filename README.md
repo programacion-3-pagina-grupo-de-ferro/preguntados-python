@@ -1,56 +1,58 @@
 <<<<<<< HEAD
-# preguntados-python
-=======
-# Trivia Estilo Preguntados (Python / Tkinter)
+# 🎯 Preguntados Python – Trivia Interactiva
 
-## Requisitos
-- Python 3.10+
-- Paquetes:
-  - `matplotlib` (para el gráfico del ranking)
-  
-Instalación rápida:
-```bash
-pip install matplotlib
+Juego estilo **Preguntados**, desarrollado en **Python** con una interfaz moderna basada en **CustomTkinter**.
+
+---
+## 📂 Estructura del proyecto
+
 ```
-
-> Tkinter suele venir con las distribuciones oficiales de Python. Si usás Linux y no lo tenés, instalá el paquete correspondiente a tu distro (ej. `sudo apt install python3-tk`).
-
-## Estructura
-```
-trivia_preguntados/
-├─ main.py                  # punto de entrada
-├─ gui.py                   # interfaz gráfica (Tkinter + Matplotlib)
-├─ game_trivia.py           # motor del juego
+preguntados-python/
+├─ gui_moderno_v3.py     # Interfaz moderna (CustomTkinter)
+├─ game_trivia.py        # Motor lógico del juego
+├─ main.py               # Punto de entrada opcional
 ├─ models/
-│  ├─ base.py               # clase abstracta
-│  ├─ player.py             # clase principal que hereda de abstracta
-│  └─ player_tree.py        # BST con CRUD completo de Player
+│  ├─ base.py            # Clase abstracta AbstractPlayer
+│  ├─ player.py          # Clase Player (hereda de AbstractPlayer)
+│  └─ player_tree.py     # Árbol binario (BST) con CRUD de jugadores
 ├─ data/
-│  ├─ questions.json        # banco de preguntas por categoría
-│  └─ scoreboard.json       # se genera automáticamente
+│  ├─ questions.json     # Banco de preguntas
+│  ├─ jugadores.json     # Jugadores registrados
+│  └─ scoreboard.json    # Ranking persistente
 └─ README.md
 ```
 
-## Cómo ejecutar
-Desde la carpeta `gui_moderno-v3.py`:
-```bash
-python gui_moderno_v3.py 
-```
 
-## Características destacadas (para el TP)
-- **Clases**: `AbstractPlayer` (abstracta) y `Player` (principal, hereda). `Player` tiene 5+ atributos, incluyendo `__uid` encapsulado.
-- **Estructura de datos (árboles)**: `PlayerBST` (ABB) con **CRUD completo** (create/read/update/delete) por nombre.
-- **Módulos utilizados**: `collections.deque`, `queue.Queue`, `json`, `re`, y `matplotlib`.
-- **Interfaz**: `Tkinter` separada en `gui.py`. Motor del juego en `game_trivia.py`. `main.py` como entrypoint.
-- **Persistencia**: Ranking en `data/scoreboard.json`. Se muestra en tabla + gráfico de barras.
-- **Validación**: Los nombres se validan con regex y no pueden repetirse.
+## 🚀 Características principales
 
-## Notas de uso
-- Cada partida consta de **10 preguntas** con categorías decididas al azar (ruleta).
-- El ranking se ordena por aciertos (desc) y nombre (asc).
-- 15 segundos por pregunta. En caso de quedarse sin tiempo sale un mensaje de respuesta incorrecta, diciendo a su vez la respuesta correcta. 
-## Extensiones posibles
-- Agregar más preguntas a `data/questions.json`.
-- Exportar ranking a CSV (con `pandas` si querés sumar otro módulo).
+✅ **Juego completo tipo Preguntados**  
+- 4 categorías: Historia, Ciencia, Geografía y Deporte  
+- Ruleta interactiva con colores distintivos por categoría  
+- 15 preguntas por categoría (mezcladas aleatoriamente, sin repetir)  
+- Algunas preguntas incluyen **verdadero/falso** e **imágenes ilustrativas**
 
->>>>>>> 67882d6 (Primer commit - Juego Preguntados)
+✅ **Pantalla unificada y moderna**
+- Interfaz creada con **CustomTkinter**  
+- Todo ocurre en una misma ventana (registro, juego, resultados y ranking)  
+- Modo **pantalla completa (F11)** y salida con **ESC**  
+- Animaciones suaves y paneles coloridos de “Respuesta correcta / incorrecta”  
+
+✅ **Sistema de jugadores y ranking**
+- Registro único (no se permiten nombres repetidos)  
+- Persistencia automática en `data/jugadores.json`  
+- Ranking ordenado por aciertos (mayor a menor)  
+- Visualización en tabla + gráfico de barras con **Matplotlib**
+
+✅ **Arquitectura modular**
+- Código dividido en módulos, siguiendo las buenas prácticas de POO.  
+- Motor de juego separado de la interfaz.  
+- Árbol binario (BST) con **CRUD completo** de jugadores.
+
+---
+
+## 🧠 Requisitos
+
+- **Python 3.10+**
+- Paquetes necesarios:
+  ```bash
+  pip install customtkinter matplotlib

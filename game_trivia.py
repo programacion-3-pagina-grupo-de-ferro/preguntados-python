@@ -1,8 +1,12 @@
-import os, json, random, re
+import os
+import json
+import random
+import re
 from collections import deque
 
 DATA_DIR = "data"
 CATEGORIES = ["Historia", "Ciencia", "Geografía", "Deporte"]
+
 
 class Question:
     def __init__(self, category, qdict):
@@ -60,6 +64,7 @@ class GameEngine:
             self._pending_questions[cat] = deque(random.sample(qlist, len(qlist)))
 
     def _load_players(self):
+        """Carga los jugadores y el scoreboard desde JSON"""
         self.players = {}
 
         # Cargamos los nombres
@@ -67,26 +72,20 @@ class GameEngine:
             try:
                 with open(self.players_path, "r", encoding="utf-8") as f:
                     names = json.load(f)
-                for n in names:
-                    self.players[n] = Player(n)
+                    for n in names:
+                        self.players[n] = Player(n)
             except json.JSONDecodeError:
                 self.players = {}
 
-    # Cargamos los puntajes del scoreboard
-    if os.path.exists(self.scoreboard_path):
-        try:
-            with open(self.scoreboard_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            for row in data:
-                name = row["name"]
-                if name not in self.players:
-                    self.players[name] = Player(name)
-                p = self.players[name]
-                p.score = row.get("score", 0)
-                p.total_answered = row.get("answered", 0)
-        except json.JSONDecodeError:
-            pass
-
+        # Cargamos los puntajes del scoreboard
+        if os.path.exists(self.scoreboard_path):
+            try:
+                with open(self.scoreboard_path, "r", encoding="utf-8") as f:
+                    self.scoreboard = json.load(f)
+            except json.JSONDecodeError:
+                self.scoreboard = {}
+        else:
+            self.scoreboard = {}
 
     # ---------------- GUARDADO ----------------
     def _save_players(self):
@@ -122,7 +121,6 @@ class GameEngine:
 
         except Exception as e:
             print(f"[ERROR] No se pudo guardar el scoreboard: {e}")
-
 
     # ---------------- CRUD ----------------
     def create_player(self, name: str) -> Player:
@@ -173,8 +171,6 @@ class GameEngine:
 
         return correct
 
-
-
     def get_ranking(self):
         # Aseguramos que los jugadores estén actualizados
         ranking = []
@@ -187,4 +183,3 @@ class GameEngine:
                 })
         ranking.sort(key=lambda x: (-x["score"], x["name"].lower()))
         return ranking
-
